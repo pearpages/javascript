@@ -213,3 +213,25 @@ friends.forEach(function(friend) {console.log(friend)});
 
 We can always refer to variables that are in the outside of a function, but no the opposite.
 
+### Objects
+
+```javascript
+var coffee = {
+    flavor: 'espresso',
+    tempertature: 'piping hot',
+    ounces: 100,
+    milk: true
+}
+
+function Coffee() {
+    this.flavor;
+    this.temperature;
+    this.ounces;
+    this.milk;
+}
+
+var myCoffee = new Coffee();
+
+console.log(typeof(myCoffee)); // object
+console.log(myCoffee instanceof Coffee); // true
+```
