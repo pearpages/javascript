@@ -119,3 +119,17 @@ while (true) {
 // exists through break
 // a = 10;
 ```
+
+### Functions
+
+```javascript
+function printAmount(amount) {
+    console.log( amount.toFixed(2) );
+}
+
+var amount = 99.99;
+
+printAmount(amount); // "99.99"
+printAmount(amount * 2); // "199.98"
+console.log(amount); // 99.99
+```
