@@ -53,9 +53,27 @@ a = a / 2;
 a = a + = ""; // "21"
 ```
 
+#### Primitive Data Types
+
+- String
+- Number
+- Boolean
+- Null
+- Undefined
+
+```javascript
+typeof(100/2); // "number"
+```
+
 ### Comments
 
 You should not say **what**, but **how** or **why**.
+
+### Input / Output
+
+- alert
+- prompt
+- confirm
 
 ### Variables and Blocks
 
@@ -139,3 +157,4 @@ console.log(amount); // 99.99
 ### Scope
 
 We can always refer to variables that are in the outside of a function, but no the opposite.
+
