@@ -122,6 +122,22 @@ if (a) {
 
 Anything that is not falsy is truethy.
 
+#### Switch
+
+```javascript
+switch (option) {
+    case "car":
+    alert("car");
+    break;
+    case "home";
+    alert("home");
+    break;
+    default:
+    alert("whatever");
+    break;
+}
+```
+
 ### Loops
 
 A loop runs until the condition turns into false or I can use the **break** statetment.
