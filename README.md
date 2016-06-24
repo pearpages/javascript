@@ -122,9 +122,11 @@ while (true) {
 
 ### Functions
 
+Parameters when you declare them, arguments when you pass them.
+
 ```javascript
-function printAmount(amount) {
-    console.log( amount.toFixed(2) );
+function printAmount(x) {
+    console.log( x.toFixed(2) );
 }
 
 var amount = 99.99;
@@ -133,3 +135,6 @@ printAmount(amount); // "99.99"
 printAmount(amount * 2); // "199.98"
 console.log(amount); // 99.99
 ```
+
+### Scope
+
