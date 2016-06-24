@@ -63,6 +63,17 @@ a = a + = ""; // "21"
 
 ```javascript
 typeof(100/2); // "number"
+typeof([]); // "object"
+var a,b;
+typeof(a+b) // "number"
+```
+
+```javascript
+Math.random(); // values between 0 and 1.
+Math.round(10.5); // 11
+Math.round(10.4); // 10
+Math.ceil(10.4); // 11
+Math.floor(10.9); // 10;
 ```
 
 ### Comments
