@@ -220,15 +220,38 @@ var coffee = {
     flavor: 'espresso',
     tempertature: 'piping hot',
     ounces: 100,
-    milk: true
+    milk: true,
+    reheat: function () {
+        if(coffee.temperature === 'cold') {
+            coffee.temperature = 'piping hot';
+            console.log('Your coffee has been reheated!');
+        }
+    }
 }
 
+coffee.temperature = 'cold';
+coffee.reheat();
+coffee['temperature'] = 'cold';
+coffee.reheat();
+
 function Coffee() {
+    var self = this;
     this.flavor;
     this.temperature;
     this.ounces;
     this.milk;
+    this.reheat = function () {
+        if(self.temperature === 'cold') {
+            coffee.temperature = 'piping hot';
+            console.log('Your coffee has been reheated!');
+        }
+    }
 }
+
+// if you put the function as part of the prototype than it's easier to iterate over the object
+Coffee.prototype.reheat = function () {
+    console.log('maybe too much');
+};
 
 var myCoffee = new Coffee();
 
