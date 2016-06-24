@@ -140,6 +140,10 @@ switch (option) {
 
 ### Loops
 
+ - for
+ - while
+ - do while
+
 A loop runs until the condition turns into false or I can use the **break** statetment.
 
 The following are optional:
