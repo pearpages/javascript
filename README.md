@@ -138,3 +138,4 @@ console.log(amount); // 99.99
 
 ### Scope
 
+We can always refer to variables that are in the outside of a function, but no the opposite.
