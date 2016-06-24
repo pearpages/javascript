@@ -199,7 +199,15 @@ console.log(friends); // ["Mark", "Lisa", "Denny"]
 
 #### looping over an Array
 
+```javascript
+var friends = ["Mark", "Lisa", "Denny", "Peter", "John", "Bjorn"];
+for(var i = 0; i<friends.length; i++) {
+    console.log(friends[i]);
+}
 
+// functional approach
+friends.forEach(function(friend) {console.log(friend)});
+```
 
 ### Scope
 
