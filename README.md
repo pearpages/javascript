@@ -215,6 +215,31 @@ We can always refer to variables that are in the outside of a function, but no t
 
 ### Objects
 
+- literals
+- prototyped objects through function constructors
+
+We also have
+
+- host objects
+  - Document
+  - Window
+  - Element
+  - Event
+  - Node
+  - Comment
+  - Console
+- core objects
+  - Math
+  - Object
+  - String
+  - Boolean
+  - Array
+  - Date
+  - Number
+- objects defined by the code's author
+
+#### Literal
+
 ```javascript
 var coffee = {
     flavor: 'espresso',
@@ -234,6 +259,8 @@ coffee.reheat();
 coffee['temperature'] = 'cold';
 coffee.reheat();
 ```
+
+#### Function Constructor
 
 ```javascript
 function Coffee() {
@@ -268,4 +295,3 @@ console.log(typeof(myCoffee)); // object
 console.log(myCoffee instanceof Coffee); // true
 ```
 
-```javascript
