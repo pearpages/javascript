@@ -185,6 +185,22 @@ printAmount(amount * 2); // "199.98"
 console.log(amount); // 99.99
 ```
 
+### Arrays
+
+```javascript
+var friends = ["Mark", "Lisa", "Denny"];
+friends.length; // 3
+friends[0]; // "Mark"
+friends.push("Peter"); // returns 4, the array now is ["Mark", "Lisa", "Denny", "Peter"] 
+friends.pop(); // returns "Peter", the array now is ["Mark", "Lisa", "Denny"]
+var newGroupOfFriends = array.slice(0,2); // returns ["Mark", "Lisa"], friends stays the same
+console.log(friends); // ["Mark", "Lisa", "Denny"]
+```
+
+#### looping over an Array
+
+
+
 ### Scope
 
 We can always refer to variables that are in the outside of a function, but no the opposite.
