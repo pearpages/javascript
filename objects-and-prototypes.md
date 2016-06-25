@@ -56,3 +56,33 @@ class Cat{
 
 var cat = new Cat
 ```
+
+## Bracket Notation
+
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Fluffy',
+    color: 'white'
+}
+
+console.log(cat['name']); // 'Fluffy'
+console.log(cat['color']); // 'white'
+```
+
+## Property Descriptor
+
+**getOwnPropertyDescriptor**
+
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Fluffy',
+    color: 'white'
+}
+
+console.log(Object.getOwnPropertyDescriptor(cat,'name'));
+```
+
