@@ -47,3 +47,26 @@ console.log(Object.hasOwnProperty('age')); // false
 Cat.prototype.age = 100;
 console.log(fluffy.age); // 5;
 console.log(muffin.age); // 100;
+
+//**************************
+
+function Cat(name, color) {
+    this.name = name;
+    this.color = color;
+}
+
+Cat.prototype.age = 3;
+
+var fluffy = new Cat('Fluffy','white');
+var muffin = new Cat('Muffin', 'brown');
+
+console.log(fluffy.age); // 3
+console.log(muffin.age); // 3
+
+Cat.prototype = {age: 5};
+
+var john = new Cat('John','black');
+
+console.log(fluffy.age); // 3
+console.log(muffin.age); // 3
+console.log(john.age); // 5
