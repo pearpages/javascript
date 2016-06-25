@@ -58,4 +58,8 @@ console.log(muffin.age); // 3
 
 console.log(Object.keys(muffin)); // ['name','color']
 console.log(Object.hasOwnProperty('age')); // false
+
+Cat.prototype.age = 100;
+console.log(fluffy.age); // 5;
+console.log(muffin.age); // 100;
 ```
