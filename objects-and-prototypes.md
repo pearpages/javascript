@@ -92,11 +92,54 @@ console.log(Object.getOwnPropertyDescriptor(cat,'name'));
 
 ### Writable
 
+It is very important to remember **Object.freeze**.
 
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Fluffy',
+    color: 'white'
+}
+
+Object.defineProperty(cat,'name',{writable: false});
+cat.name = 'John'; // TypeError: Cannot assign to read only property 'name'
+
+var cat = {
+    name: {first: 'Fluffy', last: 'LaBeouf'},
+    color: 'white'
+}
+
+Object.defineProperty(cat,'name',{writable: false});
+cat.name.first = 'Whatever'; // Yes, it can be modified, because it is the object inside
+cat.name = 'John'; // TypeError: Cannot assign to read only property 'name'
+
+// but if we use 
+Object.freeze(cat.name);
+cat.name.first = 'Whatever'; // Cannot assign to read only property 'first' of #Object
+```
 
 ### Enumerable
 
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Fluffy',
+    color: 'white'
+}
+```
+
 ### Configurable
+
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Fluffy',
+    color: 'white'
+}
+```
 
 ## Getters and Setters
 
