@@ -86,3 +86,19 @@ var cat = {
 console.log(Object.getOwnPropertyDescriptor(cat,'name'));
 ```
 
+## Define Properties
+
+**defineProperty**
+
+### Writable
+
+
+
+### Enumerable
+
+### Configurable
+
+## Getters and Setters
+
+## Prototypes and Inheritance
+
