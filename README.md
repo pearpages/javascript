@@ -195,6 +195,8 @@ friends.push("Peter"); // returns 4, the array now is ["Mark", "Lisa", "Denny", 
 friends.pop(); // returns "Peter", the array now is ["Mark", "Lisa", "Denny"]
 var newGroupOfFriends = array.slice(0,2); // returns ["Mark", "Lisa"], friends stays the same
 console.log(friends); // ["Mark", "Lisa", "Denny"]
+console.log(friends.splice(1,1)); // returns ["Mark","Denny"], we've modified friends and removed one element starting at position 1.
+console.log(friends); // logs ["Mark","Denny"]
 ```
 
 #### looping over an Array
@@ -212,6 +214,48 @@ friends.forEach(function(friend) {console.log(friend)});
 ### Scope
 
 We can always refer to variables that are in the outside of a function, but no the opposite.
+
+The **var** word is very important. Any variable that is not defined with var goes to the *Global Scope*.
+
+```javascript
+var three = "3";
+
+function alertNumber() {
+    var one = "1";
+    console.log(one); // 1
+
+    function alertAnotherNumber() {
+        var two = "2";
+        console.log(two); // 2
+        console.log(three); // 3
+        console.log(one); // 1
+    }
+
+    alertAnotherNumber();
+    console.log(two); // undefined
+
+}
+
+alertNumber(); // 1, 2, 3, 1, undefined 
+console.log(one); // undefined
+```
+
+#### The Global object
+
+It is very important not to pollute the *Global* object because we can overwrite methods.
+
+```javascript
+// being in a browser
+window.alert('hello');
+
+function alert() {
+    console.log('method overwritten');
+}
+
+window.alert(); // 'method overwritten'
+```
+
+
 
 ### Objects
 
@@ -294,4 +338,3 @@ var myCoffee = new Coffee();
 console.log(typeof(myCoffee)); // object
 console.log(myCoffee instanceof Coffee); // true
 ```
-
