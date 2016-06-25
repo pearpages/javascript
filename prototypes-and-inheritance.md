@@ -67,6 +67,8 @@ console.log(muffin.age); // 100;
 ## Changing a Function Prototype
 
 ```javascript
+'use strict';
+
 function Cat(name, color) {
     this.name = name;
     this.color = color;
@@ -89,4 +91,33 @@ console.log(muffin.age); // 3
 console.log(john.age); // 5
 
 // And thats because fluffy.__proto__ and Cat.prototype they no longer point to the same object!
+```
+
+## Multiple Levels of Inheritance
+
+There are three very important lines when creating inheritance.
+
+```javascript
+'use strict';
+
+function Animal(voice) {
+    this.voice = voice || 'grunt';
+}
+
+Animpal.prototype.speak = function() {
+    console.log(this.voice);
+}
+
+function Cat(name, color) {
+    Animal.call(this, 'Meow'); // <--
+    this.name = name;
+    this.color = color;
+}
+
+Cat.prototype = Object.create(Animal.prototype); // <--
+Cat.prototype.constructor = Cat; // <--
+
+var fluffy = new Cat('Fluffy', 'white');
+
+fluffy.speak();
 ```
