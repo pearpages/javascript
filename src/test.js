@@ -1,12 +1,19 @@
 'use strict';
+
 var cat = {
-    name: {first: 'Fluffy', last: 'LaBeouf'},
-    color: 'white'
+    name: 'Fluffy',
+    color: 'white',
+    meow: function () {
+        console.log('meoooow!!');
+    }
 }
 
-Object.defineProperty(cat,'name',{writable: false});
-Object.freeze(cat.name);
-cat.name.first = 'Whatever'; // Yes, it can be modified, because it is the object inside
+Object.defineProperty(cat, 'name', {enumerable: false});
 
+for (var propertyName in cat) {
+    console.log(propertyName);
+}
 
-// but if we use 
+console.log(Object.keys(cat));
+
+console.log(JSON.stringify(cat));

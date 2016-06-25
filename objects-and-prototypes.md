@@ -71,6 +71,29 @@ console.log(cat['name']); // 'Fluffy'
 console.log(cat['color']); // 'white'
 ```
 
+## Looping an Object
+
+```javascript
+'use strict';
+
+var cat = {
+    name: 'Mark',
+    color: 'brown',
+    meow: function () {
+        console.log('meeeeeow!');
+    }
+}
+
+for (var propertyName in cat) {
+    console.log(propertyName);
+}
+// otuputs: 'name', 'color', 'meow'
+
+for (var value of cat) {
+    console.log(value);
+}
+```
+
 ## Property Descriptor
 
 **getOwnPropertyDescriptor**
@@ -121,6 +144,10 @@ cat.name.first = 'Whatever'; // Cannot assign to read only property 'first' of #
 
 ### Enumerable
 
+- ```Object.keys()``` Will show also methods in array format ['property1','property2','method1',...]
+- ```Object.defineProperty()``` 
+- ```JSON.stringify()``` Won't show methods only properties
+
 ```javascript
 'use strict';
 
@@ -128,10 +155,22 @@ var cat = {
     name: 'Fluffy',
     color: 'white'
 }
+
+Object.defineProperty(cat, 'name', {enumerable: false});
+
+for (var propertyName in cat) {
+    console.log(propertyName);
+}
+
+// logs only 'name' because *color* is not enumerable
+
+console.log(Object.keys(cat)); // logs only 'name' because *color* is not enumerable
 ```
 
 ### Configurable
 
+Once you make an opbject not configurable you can't make it configurable again.
+
 ```javascript
 'use strict';
 
@@ -139,6 +178,13 @@ var cat = {
     name: 'Fluffy',
     color: 'white'
 }
+
+Object.defineProperty(cat, 'name', {configurable: false});
+delete(cat.name); // cannot delete property
+Object.defineProperty(cat, 'name', {configurable: true}); // ERROR!!
+Object.defineProperty(cat, 'name', {enumerable: true}); // ERROR!!
+Object.defineProperty(cat, 'name', {writable: true}); // works.
+delete(cat.name); // we can delete it now
 ```
 
 ## Getters and Setters
