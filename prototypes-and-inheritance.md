@@ -109,15 +109,39 @@ Animpal.prototype.speak = function() {
 }
 
 function Cat(name, color) {
-    Animal.call(this, 'Meow'); // <--
+    Animal.call(this, 'Meow'); // <-- 1
     this.name = name;
     this.color = color;
 }
 
-Cat.prototype = Object.create(Animal.prototype); // <--
-Cat.prototype.constructor = Cat; // <--
+Cat.prototype = Object.create(Animal.prototype); // <-- 2
+Cat.prototype.constructor = Cat; // <-- 3
 
 var fluffy = new Cat('Fluffy', 'white');
 
 fluffy.speak();
+```
+
+## Creating Prototypes Using Classes (ES6)
+
+```javascript
+'use strict';
+
+class Animal {
+    constructor(voice) {
+        this.voice = voice || 'grunt';
+    }
+
+    speak() {
+        display(this.voice);
+    }
+}
+
+class Cat extends Animal { // <-- 2, 3
+    constructor(name, color) {
+        super('Meow'); // <-- 1
+        this.name = name;
+        this.color = color;
+    }
+}
 ```
