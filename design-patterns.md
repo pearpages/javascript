@@ -196,10 +196,69 @@ A piece of code will raise an event, N number of pieces will react to it. It all
 
 Pub / Sub can be sued as message bus. A late-bound subscriber will receive all previously published messages. Useful for lazy-loading page components. Improving performance (combine with Asynchronous Execution Pattern).
 
-
-
 ---
 
 ## Promises
+
+If everything is asynchronous how do we link operations? I want to know when one or more operations complete (e.g.: Ajax, Animations, etc.).
+
+- A deferred object controls operation
+- progress raises as deferred runs
+- done raised when deferred action completes successfully
+- failure raised when deferred action is unsuccessful
+
+```javascript
+var Promise = function () {
+    var data,
+        done = [],
+        fail = [],
+        status = 'progress';
+
+    this.done = function (fn) {
+        done.push(fn);
+
+        if (status === 'done') {
+            fn(data);
+        }
+
+        return this;
+    };
+
+    this.failed = function (fn) {
+        fail.push(fn);
+
+        if (status === 'failed') {
+            fn(data);
+        }
+
+        return this;
+    };
+
+    this.resolve = function (fn) {
+        if (status !== 'progress') {
+            throw 'Promise has arleady completed with sttus of ' + status + '.';
+        }
+
+        status = 'done';
+        data = result;
+
+        done.forEach(function(action) {
+            done(data);
+        });
+    };
+
+    this.fail = function (fn) {
+
+    };
+}
+
+module.exports = Promise;
+```
+
+### With jQuery
+
+- **jQuery.Deferred**
+- implemented by $.ajax
+- public API for use anywhere
 
 ---
