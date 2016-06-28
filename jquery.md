@@ -213,12 +213,55 @@ $('#save-button')
 ## Working with User Input
 
 ```javascript
+// textarea example
 $('#notes-box').val('there are my notes');
 $('#notes-box').val(); // 'these are my notes'
+```
+
+```javascript
+// date
+$('showing-date').val('test'); // 'test' does not conform to the required format, 'yyyy-MM-dd'
+$('showing-date').val('2015-01-01');
+$('showing-date').val(); // '2015-01-01'
+```
+
+```javascript
+// checkboxes
+$('input[type="checkbox"]').eq(0).attr('checked', true); // this doesn't work!!!
+$('input[type="checkbox"]').eq(0).prop('checked', true);
+$('input[type="checkbox"]').eq(0).prop('checked'); // true
+```
+
+```javascript
+// radio buttons
+var status = $('input[name="available"]:checked').val();
 ```
 
 ---
 
 ## The Big Picture
+
+The API between versions 1.x and versions 2.x is the same. But 1.x is thought to support IE 6,7 and 8.
+
+> jQuery lives in the JavaScript ecosystem.
+
+Node.js allows you to use javascript outside of the browser with the v8 engine. We can use jQuery and native web-based applications.
+
+[Understanding Scope and Context in JavaScript](http://ryanmorr.com/understanding-scope-and-context-in-javascript/)
+
+### Naming Conventions
+
+```javascript
+var h2 = document.getElemntsByTagName('h2');
+var $h2 = $('h2');
+
+var $items = $('#special-features li');
+
+$items.height('200px')
+    .each(function(index,item) {
+        var $item = $(item);
+        // ...
+    });
+```
 
 ---
