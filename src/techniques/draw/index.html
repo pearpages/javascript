@@ -1,0 +1,34 @@
+<html>
+
+<head>
+    <style>
+    #theCanvas {
+        border:1px solid #000;
+    }
+    </style>
+</head>
+
+<body>
+    <canvas id="theCanvas">
+        Attention! Your browser does not support the Canvas.
+    </canvas>
+    <script>
+    // global 'namespace'
+    _KSM = {
+        draw: function () {
+            // Draw something on the canvas
+            var canvas = document.getElementById('theCanvas');
+            if (canvas.getContext) {
+                var context = canvas.getContext('2d');
+                context.strokeStyle = 'black';
+                context.fillStyle = 'silver';
+                context.fillRect(10,10,100,100);
+                context.strokeRet(10,10,100,100);
+            }
+        }
+    }
+    _KSM.draw();
+    </script>
+</body>
+
+</html>

@@ -6,3 +6,4 @@
 ## [Design Patterns](./design-patterns.md)
 ## [jQuery](./jquery.md)
 ## [Advanced Techniques](./advanced-techniques.md)
+## [Techniques](./techniques.md)
