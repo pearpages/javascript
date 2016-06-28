@@ -141,9 +141,66 @@ $('h2').fadeIn(function() {
 
 ## When Events Happen
 
+Examples are 'page load', 'key pressed', 'button clicked', 'form submitted', 'window scrolled', 'element focused', ...
+
+```javascript
+// ready
+
+$(document).ready(function () {
+    console.log('the page is ready');
+});
+// or
+$(function() {
+    console.log('the page is ready');
+});
+```
+
+```javascript
+// on and off
+
+$('#save-button').on('click', function(
+    console.log('the save button is clicked');
+));
+
+$('#save-button').off('click');
+```
+
+```javascript
+// calling the callback only once for the even
+$('#save-button').one('click', function () {
+    console.log('the save button is clicked');
+});
+```
+
+```javascript
+$('#save-button').click(function () {
+    console.log('clicked');
+});
+
+$('#save-button').blur(function () {
+    console.log('no more love');
+});
+```
+
 ---
 
 ## Chaining
+
+```javascript
+$('#special-features').width('50%')
+    .height('200px')
+    .addClass('higlight bordered');
+```
+
+```javascript
+$('#special-features').width('50%')
+    .height('200px')
+    .addClass('higlight bordered')
+    .each(function (index,item) {
+        var $item = $item);
+        $item.text($item.text() + ' ' + $item.attr('data-feature-id'));
+    });
+```
 
 ---
 
