@@ -202,9 +202,20 @@ $('#special-features').width('50%')
     });
 ```
 
+```javascript
+$('#save-button')
+    .click(function() { console.log('clicked'})
+    .addClass('bordered')
+```
+
 ---
 
 ## Working with User Input
+
+```javascript
+$('#notes-box').val('there are my notes');
+$('#notes-box').val(); // 'these are my notes'
+```
 
 ---
 
