@@ -122,6 +122,21 @@ $('h2').removeClass(function () {
 });
 ```
 
+```javascript
+$('h2').hide();
+$('h2').show();
+$('h2').toggle();
+```
+
+```javascript
+$('h2').fadeOut();
+$('h2').fadeIn();
+$('h2').fadeIn('fast');
+$('h2').fadeIn(function() {
+    $('#special-features').addClass('highlight');
+});
+```
+
 ---
 
 ## When Events Happen
